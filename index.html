@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Independent Wire provides unbiased, factual reporting on global markets, technology, and policy. Your trusted source for daily digital journalism.">
+    <meta name="theme-color" content="#121212">
+    <title>The Sky News | Global News & Analysis</title>
+    <style>
+        :root {
+            /* Color Palette - Dark Mode Newsroom */
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --bg-header: #121212;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent: #3b82f6; /* Professional Blue */
+            --accent-hover: #60a5fa;
+            --border-color: #333333;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --container-width: 1200px;
+        }
+
+        /* Reset & Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
+        a:hover { color: var(--accent); }
+        img { max-width: 100%; display: block; }policy.html
+        h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; line-height: 1.3; }
+
+        /* Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        .meta-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-header);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: var(--spacing-md) 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .site-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+        .main-nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        /* Mobile Menu Toggle (Hidden logic for pure CSS approach) */
+        .menu-toggle { display: none; }
+.dropdown-menu {
+  display: none;          /* THIS is the key line */
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #121212;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: #1e1e1e;
+}
+        /* Layout Grid */
+        main { padding: var(--spacing-lg) 0; }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile first */
+            gap: var(--spacing-lg);
+        }
+
+        /* Featured Article (Hero) */
+        .hero-section {
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--spacing-lg);
+        }
+        .hero-article {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+        .hero-image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #2c3e50, #4ca1af); /* Abstract News Image */
+            border-radius: 4px;
+        }
+        .hero-content h1 { font-size: 2rem; margin-bottom: var(--spacing-sm); }
+        .hero-content p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: var(--spacing-md); }
+
+        /* News Cards */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            border-bottom: 1px solid var(--border-color); /* Subtle separator */
+            padding-bottom: var(--spacing-md);
+        }
+        .news-card:last-child { border-bottom: none; }
+        .card-image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #2a2a2a;
+            border-radius: 4px;
+        }
+        .news-card h3 { font-size: 1.4rem; }
+        .news-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        
+        /* Sidebar / Opinion */
+        aside {
+            background-color: var(--bg-card);
+            padding: var(--spacing-md);
+            border-radius: 4px;
+            height: fit-content;
+        }
+        .section-header {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            display: inline-block;
+        }
+        .opinion-list { list-style: none; }
+        .opinion-item { margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--border-color); }
+        .opinion-item:last-child { border-bottom: none; margin-bottom: 0; }
+        .opinion-item h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .author { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            border-top: 1px solid var(--border-color);
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-lg);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Responsiveness */
+        @media (min-width: 768px) {
+            .main-grid {
+                grid-template-columns: 2fr 1fr; /* 2/3 Content, 1/3 Sidebar */
+            }
+            .hero-article {
+                grid-template-columns: 1.5fr 1fr;
+                align-items: center;
+            }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-image-placeholder { height: 400px; order: 2; }
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+    header {
+        padding-bottom: 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .site-logo {
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--accent);
+    }
+            
+    .main-nav {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+    }
+.main-nav a:hover {
+  color: var(--accent);
+}
+    .main-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 4px 0;
+  margin: 0;
+    }
+.main-nav a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 4px 6px;
+}
+    .menu-toggle {
+        display: none;
+    }
+        }
+        @media (min-width: 1200px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+        }
+        /* Hide/show category nav on scroll */
+.main-nav {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.main-nav.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+    </style>
+</head>
+<body>
+
+    <header role="banner">
+        <div class="container nav-container">
+            <a href="/index.html" class="site-logo">OpenSky News</a>
+            
+            <nav role="navigation" class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="/finance.html">Finance</a></li>
+<li><a href="/crypto.html">Crypto</a></li>
+<li><a href="/defi.html">DeFi</a></li>
+<li><a href="/artificial-intelligence.html">AI</a></li>
+<li><a href="/geopolitics.html">Geopolitics</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">≡</div>
+        
+
+<div class="dropdown-menu">
+  <a href="/about.html">About</a>
+  <a href="/contact.html">Contact</a>
+  <a href="/privacy.html">Privacy Policy</a>
+  <a href="#" onclick="navigator.share({title: 'OpenSky News', url: window.location.href})">Share</a>
+</div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="hero-section" aria-label="Featured Story">
+            <article class="hero-article">
+  <a href="/article/commercial-satellites.html"
+   style="display:block; color:inherit; text-decoration:none;">
+
+  <div class="hero-content">
+    <span class="meta-text">Geopolitics</span>
+
+    <h1>
+      Commercial Satellites Are Now Doing What Spy Agencies Once Hid
+    </h1>
+
+    <p>
+      What was once classified intelligence is now visible to anyone with access
+      to commercial satellite imagery and modern AI tools.
+    </p>
+
+    <div class="meta-text">
+      <time datetime="2026-01-29">Jan 29, 2026</time>
+      &bull; By OpenSky News Analysis
+    </div>
+  </div>
+
+  <div class="hero-image-placeholder"
+       role="img"
+       aria-label="Rocket launch representing commercial satellite surveillance"
+       style="
+         background-image: url('https://images.pexels.com/photos/23793/rocket-launch-space-discovery.jpg');
+         background-size: cover;
+         background-position: center;
+       ">
+  </div>
+
+  </a>
+
+  </a>
+            </article>
+        </section>
+
+        <div class="main-grid">
+            <section aria-labelledby="latest-news-heading">
+                <h2 id="latest-news-heading" class="section-header">Latest Reports</h2>
+                
+                <div class="news-grid">
+                    <article class="news-card">
+  <a href="/article/chip-shortage.html"
+     style="display:block; color:inherit; text-decoration:none;">
+
+    <div class="card-image-placeholder"
+      style="
+        background-image:
+        url('https://plus.unsplash.com/premium_photo-1664299822539-4f99ed69bec9?q=80&w=1170&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+      ">
+    </div>
+
+    <div>
+      <span class="meta-text">Finance</span>
+
+      <h3>
+        Major chip manufacturers report increased output for Q3
+      </h3>
+
+      <p>
+        Potentially easing shortages in the automotive sector.
+      </p>
+
+      <time class="meta-text" datetime="2023-10-26">
+        4 hours ago
+      </time>
+    </div>
+
+  </a>
+                    </article>
+
+                    <article class="news-card">
+  <a href="/article/hansja-rudra.html"
+     style="display:block; color:inherit; text-decoration:none;">
+
+    <div class="card-image-placeholder"
+      style="
+        background-image:
+        url('https://www.ssbcrack.com/wp-content/uploads/2024/03/Captain-Hansja-Sharma.jpg');
+        background-size: cover;
+        background-position: center;
+      ">
+    </div>
+
+    <div>
+      <span class="meta-text">Defense</span>
+
+      <h3>
+        Captain Hansja Sharma Becomes First Woman Qualified to Fly Armed Rudra Helicopter
+      </h3>
+
+      <p>
+        A milestone achievement in Indian Army aviation and gender inclusion.
+      </p>
+
+      <time class="meta-text" datetime="2023-10-26">
+        6 hours ago
+      </time>
+    </div>
+
+  </a>
+                    </article>
+
+                    <article class="news-card">
+  <a href="/article/rover-water.html"
+     style="display:block; text-decoration:none; color:inherit;">
+
+    <div class="card-image-placeholder"
+      style="
+        background-image: url('https://www.universetoday.com/article_images/pia23239-1024x821.jpg');
+        background-size: cover;
+        background-position: center;
+      ">
+    </div>
+
+    <div>
+      <span class="meta-text">Science</span>
+
+      <h3>
+        New Rover Data Suggests Ancient Water Flow in Northern Hemisphere
+      </h3>
+
+      <p>
+        Geological samples analyzed by the Perseverance team indicate river
+        delta formations dating back 3 billion years.
+      </p>
+
+      <time class="meta-text" datetime="2023-10-25">
+        Yesterday
+      </time>
+    </div>
+
+  </a>
+                    </article>
+
+                    <article class="news-card">
+                    <a href="/article/global-summit.html"
+     style="display:block; color:inherit; text-decoration:none;">
+
+    <div class="hero-content">
+      <span class="meta-text">Geopolitics</span>
+
+      <h1>
+        Global Summit Concludes with Historic Carbon Framework Agreement
+      </h1>
+
+      <p>
+        Delegates from 140 nations have signed a preliminary accord aiming to
+        reduce industrial emissions by 40% before the end of the decade,
+        signaling a major shift in international policy.
+      </p>
+
+      <div class="meta-text">
+        <time datetime="2023-10-27">Oct 27, 2023</time>
+        &bull; By Sarah Jenkins
+      </div>
+    </div>
+
+    <div class="hero-image-placeholder"
+      role="img"
+      aria-label="Global leaders meeting at summit"
+      style="
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/16/Informal_meeting_of_the_BRICS_during_the_2019_G20_Osaka_summit.jpg');
+        background-size: cover;
+        background-position: center;
+      ">
+    </div>
+
+  </a>
+                    </article>
+                </div>
+            </section>
+
+            <aside aria-labelledby="opinion-heading">
+                <h2 id="opinion-heading" class="section-header">Perspectives</h2>
+                <ul class="opinion-list">
+                    <li class="opinion-item" style="display:flex; gap:12px; align-items:flex-start;">
+  <img
+    src="https://images.pexels.com/photos/30530421/pexels-photo-30530421.jpeg"
+    alt=""
+    style="width:56px; height:56px; object-fit:cover; border-radius:6px; flex-shrink:0;"
+  />
+  <div>
+    <span class="meta-text">Perspectives</span>
+    <h4>
+      <a href="/article/ai-agents.html">
+        AI Agents Are Quietly Replacing Entry-Level Jobs
+      </a>
+    </h4>
+    <span class="author">OpenSky News Analysis</span>
+  </div>
+                    </li>
+
+<li class="opinion-item" style="display:flex; gap:12px; align-items:flex-start;">
+  <img
+    src="https://images.pexels.com/photos/6778650/pexels-photo-6778650.jpeg"
+    alt=""
+    style="width:56px; height:56px; object-fit:cover; border-radius:6px; flex-shrink:0;"
+  />
+  <div>
+    <span class="meta-text">Analysis</span>
+    <h4>
+      <a href="/article/crypto-is.html">
+        Crypto Isn’t Trying to Replace Money Anymore
+      </a>
+    </h4>
+    <span class="author">OpenSky News Analysis</span>
+  </div>
+</li>
+
+<li class="opinion-item" style="display:flex; gap:12px; align-items:flex-start;">
+  <img
+    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg"
+    alt=""
+    style="width:56px; height:56px; object-fit:cover; border-radius:6px; flex-shrink:0;"
+  />
+  <div>
+    <span class="meta-text">DeFi</span>
+    <h4>
+      <a href="/article/defi-is.html">
+        DeFi Is Quietly Rebuilding Itself After the Crashes
+      </a>
+    </h4>
+    <span class="author">OpenSky News Analysis</span>
+  </div>
+</li>
+                </ul>
+
+                <div style="margin-top: var(--spacing-lg);">
+                    <h2 class="section-header">Weekly Briefing</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+                        Sign up for our concise weekly newsletter. No spam, just facts.
+                    </p>
+                    <form
+  action="https://buttondown.com/api/emails/embed-subscribe/pepsi"
+  method="POST"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.com/pepsi', 'popupwindow')"
+  style="display:flex; gap: 5px;"
+>
+                        <input
+  type="email"
+  name="email"
+  placeholder="Email address"
+  aria-label="Email Address"
+  required
+  style="padding: 8px; border: 1px solid #333; background: #121212; color: #fff; flex: 1; border-radius: 4px;"
+>
+                        <button type="submit" style="padding: 8px 16px; background: var(--accent); color: white; border: none; border-radius: 4px; cursor: pointer;">Join</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/about.html">About Us</a>
+                <a href="/masthead.html">Masthead</a>
+                <a href="/ethics.html">Code of Ethics</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 OpenSky News. All rights reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Independent digital journalism supported by readers.</p>
+        </div>
+    </footer>
+    <script>
+function toggleMenu() {
+  const menu = document.querySelector('.dropdown-menu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+let lastScroll = 0;
+const navBar = document.querySelector('.main-nav');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 80) {
+    navBar.classList.add('hide');   // scrolling down
+  } else {
+    navBar.classList.remove('hide'); // scrolling up
+  }
+
+  lastScroll = currentScroll;
+});
+    </script>
+</body>
+</html>
+
