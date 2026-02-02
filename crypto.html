@@ -63,11 +63,6 @@
   text-decoration: none;
     }
 
-    article h2 a {
-  color: #eeeeee !important;
-  text-decoration: none;
-}
-
 article h2 a:hover {
   text-decoration: underline;
 }
@@ -128,6 +123,12 @@ article h2 a:hover {
       font-size: 0.85rem;
       color: #777;
       border-top: 1px solid #222;
+
+      .card-image-placeholder {
+  height: 180px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+      }
     }
   </style>
 </head>
@@ -149,12 +150,15 @@ article h2 a:hover {
   <main class="container">
 
   <article>
-    <img
-      src="https://images.pexels.com/photos/6778650/pexels-photo-6778650.jpeg"
-      alt="Cryptocurrency infrastructure"
-      style="width:100%; border-radius:6px; margin:16px 0;"
-    >
-
+    
+  <div class="card-image-placeholder"
+  style="
+    background-image: url('https://images.pexels.com/photos/6778650/pexels-photo-6778650.jpeg');
+    background-size: cover;
+    background-position: center;
+  ">
+  </div>
+    
     <span class="meta-text">Analysis</span>
     <h2>
       <a href="/article-crypto-is.html">
