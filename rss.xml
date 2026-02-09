@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>OpenSky News</title>
+    <link>https://openskynews.online/</link>
+    <description>Independent analysis on crypto, AI, finance and geopolitics.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Feb 2026 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>AI’s “Efficiency Shock” Is Repricing the Infrastructure Trade</title>
+      <link>https://openskynews.online/article-ai-efficiency-shock.html</link>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Efficiency-focused AI architectures are challenging capital-heavy scaling assumptions.</description>
+    </item>
+
+    <item>
+      <title>Commercial Satellites Are Now Doing What Spy Agencies Once Hid</title>
+      <link>https://openskynews.online/article-commercial-satellites.html</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Commercial satellite imagery and AI are reshaping intelligence visibility.</description>
+    </item>
+
+  </channel>
+</rss>
