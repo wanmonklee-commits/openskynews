@@ -5,7 +5,34 @@
   <title>World News | OpenSky News</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Global reporting on politics, conflict, diplomacy, and international affairs.">
+  <link rel="canonical" href="https://openskynews.online/world-news.html">
 
+<!-- Open Graph -->
+<meta property="og:title" content="World News | OpenSky News">
+<meta property="og:description" content="Global reporting on politics, conflict, diplomacy, and international affairs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://openskynews.online/world-news.html">
+<meta property="og:image" content="https://openskynews.online/og-image.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "World News",
+  "url": "https://openskynews.online/world-news.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "OpenSky News",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://openskynews.online/logo.png"
+    }
+  }
+}
+  </script>
   <style>
     /* Base Styles */
     body {
@@ -57,7 +84,12 @@
       opacity: 1;
       text-decoration: underline;
     }
-
+.meta-text {
+  font-size: 0.8rem;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
     /* Main Content */
     main {
       max-width: 900px;
@@ -105,7 +137,7 @@
       color: #888;
       display: block;
     }
-
+</main>
     /* Footer */
     footer {
       background: #0d0d0d;
@@ -128,30 +160,25 @@
   </nav>
 </header>
 
-<article class="news-card">
-  <a href="/article-ai-agents.html" style="display:block; text-decoration:none; color:inherit;">
+<main>
+      <article>
+  <a href="/article-ai-agents.html" style="text-decoration:none; color:inherit;">
     
-    <div class="card-image-placeholder"
-      style="
-        height:180px;
-        background-image:url('https://images.pexels.com/photos/30530421/pexels-photo-30530421.jpeg');
-        background-size:cover;
-        background-position:center;
-      ">
-    </div>
+    <div style="
+      height:180px;
+      background-image:url('https://images.pexels.com/photos/30530421/pexels-photo-30530421.jpeg');
+      background-size:cover;
+      background-position:center;
+      border-radius:6px;
+      margin-bottom:12px;
+    "></div>
 
-    <div>
-      <span class="meta-text">AI</span>
-      <h3>AI Agents Are Quietly Replacing Entry-Level Jobs</h3>
-      <p>
-        Not through mass layoffs — but through silent automation embedded inside workflows.
-      </p>
-      <time class="meta-text">Jan 29, 2026</time>
-    </div>
-
+    <span class="meta-text">Artificial Intelligence</span>
+    <h2>AI Agents Are Quietly Replacing Entry-Level Jobs</h2>
+    <p>Not through mass layoffs — but through silent automation embedded inside workflows.</p>
+    <time>Jan 29, 2026</time>
   </a>
-</article>
-
+    </article>
 <footer>
   © 2026 OpenSky News
 </footer>
