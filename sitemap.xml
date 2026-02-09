@@ -3,10 +3,42 @@
 
   <url>
     <loc>https://openskynews.online/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://openskynews.online/finance.html</loc>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://openskynews.online/crypto.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://openskynews.online/defi.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://openskynews.online/artificial-intelligence.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://openskynews.online/geopolitics.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://openskynews.online/article-ai-efficiency-shock.html</loc>
+    <lastmod>2026-02-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://openskynews.online/article-ai-agents.html</loc>
   </url>
 
   <url>
@@ -14,23 +46,7 @@
   </url>
 
   <url>
-  <loc>https://openskynews.online/article-ai-agents.html</loc>
-</url>
-
-<url>
-  <loc>https://openskynews.online/article-crypto-is.html</loc>
-</url>
-
-<url>
-  <loc>https://openskynews.online/article-commercial-satellites.html</loc>
-</url>
-
-<url>
-  <loc>https://openskynews.online/crypto.html</loc>
-</url>
-
-<url>
-  <loc>https://openskynews.online/geopolitics.html</loc>
-</url>
+    <loc>https://openskynews.online/article-commercial-satellites.html</loc>
+  </url>
 
 </urlset>
