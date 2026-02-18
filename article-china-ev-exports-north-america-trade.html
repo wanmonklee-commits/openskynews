@@ -71,6 +71,26 @@
       color: #9ca3af;
       margin-bottom: 28px;
     }
+    article img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 20px 0;
+    }
+
+    .article-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  margin: 24px 0;
+  border-radius: 4px;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     article p {
       font-size: 1.05rem;
@@ -106,9 +126,10 @@
 
   <article>
 
-    <img src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg"
-         alt="Electric vehicles at port ready for export"
-         loading="lazy">
+    <div class="article-image">
+  <img src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg"
+       alt="Electric vehicles at port ready for export">
+    </div>
 
     <p>
       Canada’s January 2026 decision to admit up to 49,000 Chinese-made electric vehicles (EVs) at a sharply reduced 6.1% tariff has triggered political backlash — and quiet alarm across the U.S. auto sector.
