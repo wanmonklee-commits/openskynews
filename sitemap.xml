@@ -41,6 +41,14 @@
   </url>
 
   <!-- Articles -->
+
+<url>
+  <loc>https://openskynews.online/article-china-ev-exports-north-america-trade.html</loc>
+  <lastmod>2026-02-18</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+  
   <url>
     <loc>https://openskynews.online/article-us-taiwan-india-ai-trade.html</loc>
     <lastmod>2026-02-15</lastmod>
