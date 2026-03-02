@@ -515,26 +515,7 @@ gtag('config', 'G-NG0R01N88F');
             <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Independent digital journalism supported by readers.</p>
         </div>
     </footer>
-    <script>
-function toggleMenu() {
-  const menu = document.querySelector('.dropdown-menu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-
-let lastScroll = 0;
-const navBar = document.querySelector('.main-nav');
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScroll && currentScroll > 80) {
-    navBar.classList.add('hide');   // scrolling down
-  } else {
-    navBar.classList.remove('hide'); // scrolling up
-  }
-
-  lastScroll = currentScroll;
-});
-    </script>
+    <script src="/js/main.js" defer></script>
+  
 </body>
 </html>
